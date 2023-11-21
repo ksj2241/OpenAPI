@@ -1,0 +1,25 @@
+1. 요약정리
+	@Query Annotation + jpql
+		jpql : Java Persistence Query Language
+		SQL을 추상화 했기에 특정 데이터베이스 벤더에 종속적이지 않음
+		그래서 jpql을 따로 공부해야 함
+		
+	Query Method 사용 시, 도메인 URI에 "search"가 무조건 붙음. 이건 못바꿈
+	
+	실행한 결과의 href의 페이지를 만들 수 있다.
+	그걸 보고 HAL Explorer 이라 함
+	
+	DB 서버에서 Join 하지만,
+	클라이언트 간에서도 Join 가능하다
+	
+	JSON VUE 실행되어야 JSON이 이쁘게 보인다
+	
+2. 추가 공부 할 내용
+	RepositoryRestConfigurer?
+	JPA 사용 시, 왜 제공되지 않는 URI호출 했을 때 @RepositoryRestResource의 URI로 진행이 되는가?
+	jpql 란?
+	HAL Explorer 란?
+	Lazy , Eager 란?
+	
+3. 참고 URL
+	
