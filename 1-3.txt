@@ -1,0 +1,50 @@
+1. 요약정리
+	@Resource = @Autowierd + @Qualifile
+		@Autowierd + @Qualifile 을 사용하는 것을 권장.
+		
+	MVC에서 View는 thymeleaf를 가장 많이 사용.
+	
+	Controller 에서 void로 함수 설정 시,
+	RequestMapping이 곧 html 이름이 된다.
+	
+	************************************************************************************
+	Controller는 아래와 같은 계층구조로 하는 것을 추천(가독성과 문서가 이쁘게 만들어진다...ㅋㅋㅋ)
+		@RequestMapping("/user")
+			@PostMapping("add")
+			@PostMapping("del")
+			@PostMapping("sel")
+	************************************************************************************
+	
+	************************************************************************************
+	@RequestMapping("/param.do")
+	public String requestParam(@RequestParam("id") String id){
+		...
+	}
+	GET /param.do			(X)
+	GET /param.do?id=gdhong		(O)
+	----------------------------------------------
+	@RequestMapping("/param.do")
+	public String requestParam(
+		@RequestParam(value="id", required=false, defaultValue="gdhong") String id){
+		...
+	}
+	GET /param.do			(O)
+	GET /param.do?id=gdhong		(O)
+	------------------------------------------------
+	@RequestMapping("/board")
+	public String requestParam(
+		@RequestParam(value="page", required=false, defaultValue="1") int pageNo,
+		@RequestParam(value="size", required=false, defaultValue="5") int pageSize ){
+		...
+	}
+	************************************************************************************
+	
+	MyBatis Framework란?
+
+2. 추가 공부 할 내용
+	@Autowierd ? @Qualifile ? @Resource ?
+	thymeleaf 사용법 ?
+	커맨드객체 상세하게 공부
+
+3. 참고 URL
+	

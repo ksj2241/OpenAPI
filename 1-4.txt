@@ -1,0 +1,16 @@
+1. 요약정리
+	Mybatis
+		typeAlias 는 필수로 입력 그렇지 않으면 클래스가 길어 개발하기가 힘듦.
+		OpenAPI 만들 때는 parameterType이 HASH로 하면 안된다.
+		mapper namespace 넣는거 추천.(호출할 땐, namespace.selectList 식으로 호출)
+		
+	Controller 에서 Service 호출 시,
+	한번의 서비스 호출로 모든 서비스가 일어나야 한다.
+	여러번 호출하게 하면 그것은 가장 나쁜 API 개발 방식이다
+
+2. 추가 공부 할 내용
+	int와 _int의 차이?
+	int와 Integer의 차이?
+
+3. 참고 URL
+	

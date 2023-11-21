@@ -1,0 +1,32 @@
+1. 요약정리
+	전역예외처리 하기 위해선 @ControllerAdvice 를 사용해야한다.
+		이거 사용 잘하면 Log4j적용에도 많이 도움되지 않을까...??
+	
+	단일 예외처리
+		@ExceptionHandler(value = {ApiException.class})
+		public ResponseEntity<ApiErrorInfo> handleCustomException(ApiException e) {
+			ApiErrorInfo error = new ApiErrorInfo("@ExceptionHandler" + e.getMessage(), e.getStatus());
+			ResponseEntity<ApiErrorInfo> entity = new ResponseEntity<ApiErrorInfo>(error, HttpStatus.BAD_REQUEST);
+			
+			return entity;
+			
+		}
+		
+	Global 에서 적용 시엔
+	예외처리 시, 지역에 있는 것은 지역먼저 처리
+		
+	단위 테스트 시, Junit 을 사용
+	MVC에서는 순수하게 Controller 에서는 Service 모형을 만들어야 한다.
+	이 모형을 만드는 행위는 Mock 행위라고 한다. Mocking 이라고 한다.
+	이 목킹하기 위해선 서버를 직접 구성하지 않고도 MVC Servlet Service를 목빈(Mock Bean)한다.
+	MockMVC를 활용한다.
+	test package에 작성해야 한다.
+	
+	
+2. 추가 공부 할 내용
+	@ExceptionHandler ?
+	AOP 란?
+	@ControllerAdvice vs @RestControllerAdvice 차이 ?
+	
+3. 참고 URL
+	https://zgundam.tistory.com/10

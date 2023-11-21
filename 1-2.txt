@@ -1,0 +1,74 @@
+1. 요약정리
+	openjdk17 설치 후, sts jar 파일을 더블클릭하면 압축이 풀린다.
+	db test는 h2 db 사용. bin 아래 배치파일 실행하면 브라우저 띄우면서 db 웹서버가 실행된다.
+	C:\Windows\System32\drivers\etc 경로에서 hosts 파일을 사용하여 host 를 변경 하라 수 있다.
+		(여러 host로 테스트 해보아야 하기에, 확인 하는 방법은 cmd 창에서 추가한 hosts를 ping 날려본다.)
+		
+	SpringFramework vs SpringBoot?
+	SpringBoot는 Framework에서 추가 설정파일도 같이 설치하여 같은 버전으로 사용하기 쉽게 만들어진 패키지
+	즉, SpringFramework에서 발전된게 SpringBoot.
+	
+	micro 단위의 framework인 Spark Framework를 사용안하고
+	Spring을 쓰는 이유는 기업시점에서 검증된 Framework를 사용하는 것이 가장 좋음.
+	
+	Spring IOC(Inversion Of Control) - SpringFramework 에서 가장 핵심적인 내용
+	객체 생명주기까지 관리해줄려면 Main 모듈에서 IOC Container를 활용하 객체를 생성한다.
+	SpringBoot는 이 컨테이너가 내장되어 있다.
+	이 컨테이너가 객체 상호작용인 dependency Injection 세팅(Bean 셋팅)하고,
+	dependency Lookup 으로 Bean 객체를 가져온다.
+	그러나 이 모든 작업은, MVC에서 자동처리해준다.
+		Single Call : stateless
+			메소드를 호출할 때 마다 객체(Object를 생성해준다. 즉 여러개가 쌓인다)
+		singletone : stateful
+			메소드를 호출할 때 해도 최초 생성 된 객체를 재활용하여 사용한다(Object는 최초만 생성된다.)
+			
+	1. Setter Injection
+		public class UserService {
+		   private String name;
+		   public void setNmae(String name) {
+			   this.name = name;
+		   }
+		}
+		<bean id="userService" class=".....UserService">
+		   <property name="name" value="홍길동" />
+		</bean>
+		
+	2. Constructor Injection
+		public class UserService {
+		   private String name;
+		   public UserService(String name) {
+			 this.name = name;
+		   }
+		}
+		<bean id="userService" class=".....UserService">
+		   <constructor-args value="홍길동" index="0" />
+		</bean>
+		
+	3. bean to bean Injection
+		public class UserService {
+		   private UserDAO userDAO;
+		   public void setUserDAO(UserDAO userDAO) {
+			   this.userDAO = userDAO;
+		   }
+		}
+		<bean id="userDAO" class="...." />
+		<bean id="userService" class=".....UserService">
+		   <property name="userDAO" ref="userDAO" />
+		</bean>
+	
+	@controller > @service > @repository1(vo) > db1
+						   > @repository2(vo) > db2
+	가 가능, 이게 Bean이 해줄 수 있다.
+	
+
+2. 추가 공부 할 내용
+	chrome postman이 무엇?
+	Spark Framework는 무엇?
+	aop 무엇?
+	lightweight IoC Container는 무엇?
+	ORM은 무엇?
+	JAVA 객체 생명주기 까지 관리하는 방법?
+	Spring IOC는 무엇?
+
+3. 참고 URL
+	

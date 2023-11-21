@@ -1,0 +1,42 @@
+1. 요약정리
+	Rest API 에서 로그인 후 토큰이 저장되는데 토큰을 인증하면 웹브라우저의 저장소는
+		F12 > Application > Storage안에 IndexedDB 라는 곳에 쌓이게 하는게 트렌드다.
+		그러나 사용법이 조금 복잡하다.
+		Local Storage나 Session보다 보안적으로 안전하다.
+		그리고 DB 적으로 접근이 가능하다.
+	
+	Network > Headers > Accept(Accept Header)는 이러한이러한 형태로 서비스를 받아보고 싶다 란 내용이 들어있다.
+		내가 직접 설정하지 않았을 뿐이지, 자동으로 전송하고 있었더라... 이거 사용하면 매우 좋을 것
+		
+	Hateoas 보단 다큐먼테이션 관리가 더 중요하다고 생각한다.(이건 강사 생각...!)
+		헤이토스는 주석같은거 다는 옵션관리하는 기능인 것 같음...
+	
+	Rest URI 설계 시, 데이터 중심적으로 설계하라
+	
+	자바 객체를 XML, JSON으로 설정 시, Convert를 Bean 등록 해주어야 한다.
+	
+	SpringBoot에서 REST API 시,
+	컨트롤러에서 model, modelAndView가 아닌 POJO로 받는다.
+	
+	Controller
+		@RequestBody 어노테이션을 활용하여, HTTP BODY에 포함된 정보
+		즉, Content Type에 따라 Json or XML로 역직렬화 할 수 있다.
+		
+		@ResponsBody 어노테이션을 활용하여, HTTP BODY에 포함된 정보활용하여,
+		Return 해줄 수 있다. 그러나 작성하지 않으면 브라우저에 Head Accept에 의한 자동 Json으로 적용이 된다.
+		
+		@RestController
+		RESTful Service 만을 개발한다면 @RestController
+		웹화면에 모드 까지 대응해야 한다면 @Controller
+	
+	
+			
+
+2. 추가 공부 할 내용
+	LocalStorage, Session, IndexdDB 사용법?
+	html 내, Accept Header 내용 기입 방법?
+	Accpet Header 기입 오브젝트 종료?
+	헤이토스(Hateoas)는 무엇?
+	
+3. 참고 URL
+	https://zgundam.tistory.com/10
