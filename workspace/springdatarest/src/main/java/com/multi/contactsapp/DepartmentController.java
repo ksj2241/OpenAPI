@@ -17,8 +17,20 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentRepository departmentRepository;
 
+//	@GetMapping("{deptid}")
+//	public Optional<Department> getDepartment(@PathVariable("deptid") String deptid) {
+//		return departmentRepository.findById(deptid);
+//	}
+	
 	@GetMapping("{deptid}")
 	public Optional<Department> getDepartment(@PathVariable("deptid") String deptid) {
-		return departmentRepository.findById(deptid);
+		Optional<Department> optDept = departmentRepository.findById(deptid);
+		if (optDept.isPresent()) {
+			Department dept = optDept.get();
+			for (int i = 0; i < dept.getEmployees().size(); i++) {
+				dept.getEmployees().get(i).setDepartment(null);
+			}
+		}
+		return optDept;
 	}
 }

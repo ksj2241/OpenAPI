@@ -15,7 +15,5 @@ public class SpringRestConfig implements RepositoryRestConfigurer {
 		// TODO Auto-generated method stub
 		config.exposeIdsFor(Contact.class);
 	}
-	
-	
 
 }

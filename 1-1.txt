@@ -36,6 +36,13 @@ stepanowon@hotmail.com
 	openapi docs 라는 툴을 활용하여 Documentation 진행한다.
 	
 	H2 db 실행 시, Generic H2 (Embedded) 로 연결 후, Generic H2 (Server)로 연결.
+	
+	JSON VUE 실행되어야 JSON이 이쁘게 보인다
+	그러나 시크릿모드에선 사용안됨
+	
+	이클립스
+		컨트롤 시프트 O > 자동 import
+		선택 후, 컨트롤 쉬프트 F > 자동 줄바꿈 전체
 
 2. 추가 공부 할 내용
 	JPA vs Mybatis framework 차이?

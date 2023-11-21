@@ -14,7 +14,7 @@ public class Contact {
 	private String name;
 	private String tel;
 	private String address;
-	
+
 	public Contact() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -59,5 +59,5 @@ public class Contact {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 }
