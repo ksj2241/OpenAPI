@@ -1,0 +1,26 @@
+1. 요약정리
+	SpringData
+		RDB, NRDB 다양한 데이터소스를 이용하는 Spring 기반 Application의 손쉬운 개발을 지향
+		
+		JPA 이전 EJB, Hibernate 등 있지만
+		EJB는 너무 느리고 API 복잡성이 높다
+		Hibernate가 대표정인 ORM 프레임워크
+		
+	JPA
+		RDB 만을 위한 API
+		JPA의 인터페이스를 구현한 대표적인 것이 Hibernate
+		Application > JPA > Hibernate
+						  > EclipseLink
+						  > DataNucleus
+						  ...
+		데이터베이스 연동에 사용되는 코드뿐만 아니라 SQL 까지 자동생성하여 제공한다.
+			이거... 현재 우리 시스템에서 절대 맞지 않는 API... 결국 Mybatis 써야햐나...
+		
+	
+2. 추가 공부 할 내용
+	SpringData 지원하는 API 종류
+	JPA ?
+	JPA에 사용된 @Id, @Entity, @GeneratedValue 등 종류 및 기능?
+	
+3. 참고 URL
+	
