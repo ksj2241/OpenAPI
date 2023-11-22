@@ -59,9 +59,10 @@ public class ApiKeyProcessor {
 	}
 
 	public void checkApiKey(String hostname, String apiKey) throws ApiKeyException {
+		
         // 이곳에 코드를 작성합니다.
 		ApiKeyVO vo = repository.read(apiKey);
-		
+		System.out.println(vo.getCount());
 		if(vo == null) {
 			throw new ApiKeyException("등록되지 않은 apikey입니다.");
 		}
@@ -70,10 +71,11 @@ public class ApiKeyProcessor {
 			throw new ApiKeyException("등록되지 않은 origin(호스트명)입니다.");
 		}
 		
-		if(vo.getCount() > maxCount) {
+		if(vo.getCount() >= maxCount) {
 			throw new ApiKeyException("최대 요청 수를 초과했습니다.");
 		}
 		
+		repository.update(apiKey); // 사용 카운트 1증가
 	}
 
 }
