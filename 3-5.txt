@@ -13,6 +13,7 @@
 		
 2. 추가 공부 할 내용
 	Redis 무엇?
+	Controller 내, preHandle 메소드 등 종류와 사용법?
 	
 3. 참고 URL
 	https://try.redis.io/

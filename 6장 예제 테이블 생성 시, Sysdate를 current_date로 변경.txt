@@ -1,0 +1,1 @@
+6장 예제 테이블 생성 시, Sysdate를 current_date로 변경

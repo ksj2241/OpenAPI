@@ -45,11 +45,35 @@ public class ApiKeyProcessor {
 
 	public String requestNewAPIKey(ApiKeyVO apiKeyVO) throws Exception {
 		//아래 줄을 삭제하고 이곳에 코드를 작성합니다.
-		return null;
+		String apiKey = DigestUtils.md5DigestAsHex(UUID.randomUUID().toString().getBytes());
+		apiKeyVO.setApiKey(apiKey);
+		
+		try {
+			repository.create(apiKeyVO);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ApiKeyException("이미 등록된 API Key 입니다.");
+		}
+		
+		return apiKey;
 	}
 
 	public void checkApiKey(String hostname, String apiKey) throws ApiKeyException {
         // 이곳에 코드를 작성합니다.
+		ApiKeyVO vo = repository.read(apiKey);
+		
+		if(vo == null) {
+			throw new ApiKeyException("등록되지 않은 apikey입니다.");
+		}
+		
+		if(hostname == null || !hostname.equals(vo.getHostName())) {
+			throw new ApiKeyException("등록되지 않은 origin(호스트명)입니다.");
+		}
+		
+		if(vo.getCount() > maxCount) {
+			throw new ApiKeyException("최대 요청 수를 초과했습니다.");
+		}
+		
 	}
 
 }

@@ -2,12 +2,17 @@
 	CORS(Cross Origin Resource Sharing) ?
 		서버(b도메인)가 허용된 white list(a도메인)에 등록된 도메인은 데이터 전송 허가하여 해당 브라우저가 호출한 도메인(a도메인)에 데이터 전송
 		
-		Simple Request, Preflight Request
-		Preflight Request를 수행하지 않으면 Simple Request 수행
-		모든 case 상 Preflight Request 만 쓴다고 보면 됨
+		서블릿 단에서
+			Simple Request, Preflight Request
+			Preflight Request를 수행하지 않으면 Simple Request 수행
+			모든 case 상 Preflight Request 만 쓴다고 보면 됨
 		
-		Preflight Request는 사전에 먼저 서비스 호출하여 동작 불가 여부를 먼저 리턴 받은 후,
-		본 동작 Requeust를 처리하는 호출을 실행.
+			Preflight Request는 사전에 먼저 서비스 호출하여 동작 불가 여부를 먼저 리턴 받은 후,
+			본 동작 Requeust를 처리하는 호출을 실행.
+			
+			그러나 controller단에서도 가능 하다.
+			컨트롤러 안에서 핸들러 메소드 진행 전 HanderInterceptor 에서
+			PreHandle, postHandle, afterCompletion 등 가능하다.
 		
 		전역 처리 시, 아래 로직 이해가 안감
 			@Override
