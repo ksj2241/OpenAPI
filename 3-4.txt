@@ -1,0 +1,17 @@
+1. 요약정리
+	CORS(Cross Origin Resource Sharing) ?
+		서버(b도메인)가 허용된 white list(a도메인)에 등록된 도메인은 데이터 전송 허가하여 해당 브라우저가 호출한 도메인(a도메인)에 데이터 전송
+		
+		Simple Request, Preflight Request
+		Preflight Request를 수행하지 않으면 Simple Request 수행
+		모든 case 상 Preflight Request 만 쓴다고 보면 됨
+		
+		Preflight Request는 사전에 먼저 서비스 호출하여 동작 불가 여부를 먼저 리턴 받은 후,
+		본 동작 Requeust를 처리하는 호출을 실행.
+	
+2. 추가 공부 할 내용
+	Simple Request vs Preflight Request ??
+	
+3. 참고 URL
+	https://contactsvc2.bmaster.kro.kr/contacts?callback=test&pageno=1
+	
