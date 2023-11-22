@@ -1,0 +1,41 @@
+1. 요약정리
+	OAuth 1.0a 사전지식
+		HMAC(Hash-based Message Authentication Code) : 해시 기반 메세지 무결성 검증 코드
+		데이터를 암호화 된 HMAC를 공통비밀키로 생성하면 긴 코드가 생성되는데 이게 서명이라 한다.
+		서명의 길이 즉, bit 수에 따라 SHA256 등등으로 불린다
+		(데이터 + HMAC => 인증)
+		
+		현재는 OAuth 2.0 이 표준으로 많이 쓴다.
+		
+		OAuth 1.0은 단순해서 흐름이해하기 좋다, 1가지 처리방식 밖에 없다
+		2.0으로 넘어오면서 4가지 + a(알파)로 많아졌기 때문에
+		2.0을 교육하기 위해 사전공부가 될 수 있다.
+		그러나,
+		1.0은 안전성은 높으나 학장성이 떨어진다.
+		2.0은 안전성은 떨어지나 확장성이 높다.
+		
+		그래도 1.0은 공부로 하지만,
+		실무에서는 2.0을 사용하여야 한다.
+		
+		용어 (괄호는 해당 교육 안에 사용될 약어) 교재 303P
+			3-Legsed OAuth
+				Service Provider : API를 제공하는 서비스, 제한된 리소스가 위치한 웹사이트나 웹서비스
+				User : 제한된 리소스의 소유자. 다른 사이트에서 접근하기를 원하는 사용자
+				Consumer, Client : 사용자 소유의 제한된 리소스에 접근하려는 어플리케이션
+			
+			Protected Resources
+			
+			Consumer Key(CK)
+			Consumer Secret(CS)
+			
+			Token
+				Request Token(RT)
+				Request Token Secret(RTS)
+				Access Token(AT)
+				Access Token Secret(ATS)
+		
+2. 추가 공부 할 내용
+	HMAC or OAuth AWS ?
+	
+3. 참고 URL
+	
