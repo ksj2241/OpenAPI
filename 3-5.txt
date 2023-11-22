@@ -1,0 +1,15 @@
+1. 요약정리
+	API Key?
+		id : 식별, pw : 인증(Authentication), 인증 후 권한부여 : 인가(Authorization)
+		
+		Application 단위로도 인증을 한다.
+		Client_id, client_key, API_key 등이 식별 / client_secret : 인증
+		인증을 거치지 않기도 하지만 식별만 하는 경우는 공용데이터로 조회 시에 주로 사용하기에 App단위로 식별한다.
+		
+		
+2. 추가 공부 할 내용
+	
+	
+3. 참고 URL
+	
+	
