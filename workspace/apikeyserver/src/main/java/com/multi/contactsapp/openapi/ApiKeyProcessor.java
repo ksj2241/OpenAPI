@@ -62,7 +62,7 @@ public class ApiKeyProcessor {
 		
         // 이곳에 코드를 작성합니다.
 		ApiKeyVO vo = repository.read(apiKey);
-		System.out.println(vo.getCount());
+		
 		if(vo == null) {
 			throw new ApiKeyException("등록되지 않은 apikey입니다.");
 		}
