@@ -21,7 +21,33 @@
 	하여야 한다.
 	그런데 패치조인은... 여러번돈다...
 	
+	JPA는 단일로 조회하기 좋았는데,
+	여러 테이블 조회할 때와, 단방향 양방향 처리 시,
+	매우 불편 DB 쿼리에 조인 걸던가, controller 에서 join 걸던가 해야 함...
+	(DB 구조상 정규화가 덜된 구조인 경우엔 JPA 사용해도 되지 않을까... 하지만 우리 시스템에서는 맞지않음)
+	
 	※ 강사생각 : JAVA 보단 Kotlin 이 코딩적으로 보면 비전이 있을 것 같다
+	
+	
+	마지막 실행할 때,
+		HttpGet httpGet = new HttpGet("http://localhost:8080/contacts");
+		httpGet.setHeader("Accept", "application/json");
+		
+		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+		CloseableHttpResponse response = httpClient.execute(httpGet);
+		
+		if(response.getStatusLine().getStatusCode() == 200) {
+			ResponseHandler<String> handler = new BasicResponseHandler();
+			String body = handler.handleResponse(response);
+			System.out.println("@@@@@ Json : " + body);
+		}
+		else {
+			System.out.println("상태코드 : " + response);
+		}
+
+	에러난다.
+
+	이거 한번 확인해봐야 할 듯
 	
 2. 추가 공부 할 내용
 	RepositoryRestConfigurer?

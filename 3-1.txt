@@ -1,0 +1,25 @@
+1. 요약정리
+	GraphQL
+	
+	Cross Domain 문제 해결 방법을 이해하기 위해 기본 작성법을 이해해야 알 수 있음.
+	(Angular, React, Vue, JQuert 등)
+	
+	jquery는 해외에선 많이 사용하지 않았으나,
+	우리나라에서 많이 썼던 이유는 IE를 매우 많이 지원하였다.
+	
+	jQuery Ajax 함수는
+	Http 통신할 때 사용하는 함수이다.
+	
+2. 추가 공부 할 내용
+	GraphQL ?
+	오버패칭?
+	jQuerty selector 종류?
+	
+3. 참고 URL
+	https://contactsvc.bmaster.kro.kr/
+		> 강사가 svc 테스트 하기 위해 만든 사이트
+	https://contactsvc3.bmaster.kro.kr/
+		> 강사가 GraphQL로 만든 예제 사이트
+	https://gaaaabal.tistory.com/119
+		> script body 안에 넣는 이유
+	

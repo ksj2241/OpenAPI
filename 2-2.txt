@@ -14,6 +14,7 @@
 		
 	Global 에서 적용 시엔
 	예외처리 시, 지역에 있는 것은 지역먼저 처리
+	전역 단위 Exception이 중요하다고 생각... 그냥 Exception 자체가 매우 중요하다고 생각
 		
 	단위 테스트 시, Junit 을 사용
 	MVC에서는 순수하게 Controller 에서는 Service 모형을 만들어야 한다.

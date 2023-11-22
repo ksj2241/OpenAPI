@@ -18,6 +18,8 @@ stepanowon@hotmail.com
     #openapi1120 을 추가힙니다.
   - 이 채널은 수업 종료후 2-3주 유지후 삭제할 예정입니다.
   - 가입 후 접속할 때는 https://stepanowon.slack.com
+  
+  Git - https://github.com/stepanowon/openapi-script/blob/main/04.txt
 
 ************************************************************************************
 

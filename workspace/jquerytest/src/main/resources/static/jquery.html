@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>jquery 예제</title>
+</head>
+
+<body>
+	<div id="container">
+		<div id="a">jQuery 1</div>
+		<div>jQuery 2</div>
+		<div class="test">jQuery 3</div>
+		<div class="test main">jQuery 4</div>
+		<h3 id="a">jQuery 5</h3>
+		<h3 class="test">jQuery 6</h3>
+		<hr />
+		<h2>한식 리스트</h2>
+		<hr />
+		<table id="foods">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>메뉴</th>
+					<th>가격(원)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1001</td>
+					<td>짜장면</td>
+					<td>7500</td>
+				</tr>
+				<tr>
+					<td>1002</td>
+					<td>김밥</td>
+					<td>3500</td>
+				</tr>
+				<tr>
+					<td>1003</td>
+					<td>불고기덮밥</td>
+					<td>9000</td>
+				</tr>
+				<tr>
+					<td>1004</td>
+					<td>순두부찌개</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td>1005</td>
+					<td>삼겹살</td>
+					<td>16000</td>
+				</tr>
+				<tr>
+					<td>1006</td>
+					<td>된장찌개</td>
+					<td>8000</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<button id="prev">이전</button>
+		<button id="next">다음</button>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript">
+			$("#a").css("color", "blue");
+			$("h3").css("border", "dashed 2px gray");
+			$(".test").css("background-color", "yellow");
+			
+			//$("#foods > tbody > tr").css("background-color", "aqua");	// "#foods > tbody > tr" 시, 자식까지 적용
+			//$("#foods tr").css("background-color", "aqua");		// "#foods tr" 시, foods 아래 후손까지 다 적용
+			
+			$("#foods > tbody > tr:odd").css("background-color", "aqua");
+			$("#foods > tbody > tr:even").css("background-color", "bisque");
+			$("#foods tr:first").css("background-color", "purple").css("color", "yellow");
+			
+			$("#foods > tbody > tr").on("click", function() {
+				var sFood = $(this).find("td:eq(1)").html();	// 여기에 this 는 상위 레벨이 아닌 선택된 컴포넌트를 의미
+				var nPrice = $(this).find("td:eq(2)").html();
+				
+				alert(`${sFood} 의 가격 : ${nPrice}원`);	// 지금은 1 옆에 역따옴표로 감쌌음.
+			});
+			
+			var current = $("#foods > tbody >tr:first").css("font-style", "italic");
+			
+			$("#prev").on("click", function() {
+				var prev = current.prev();
+				if (prev.length > 0) {
+					prev.css("font-style", "italic");
+					current.css("font-style", "");
+					current = prev;
+				}
+			});
+			
+			$("#next").on("click", function() {
+				var next = current.next();
+				if (next.length > 0) {
+					next.css("font-style", "italic");
+					current.css("font-style", "");
+					current = next;
+				}
+			});
+		</script>
+		
+	</div>
+</body>
+
+</html>
