@@ -1,6 +1,7 @@
 package com.multi.contactsapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.multi.contactsapp.util.ApiException;
 
 @RestController
 @RequestMapping(value = "/contacts")
+//@CrossOrigin(origins = {"http://client:8000", "http://jcornor.com:8000"})	단일 지역의 cors 설정... 이거 매우 불편... 컨트롤러마다 해줘야하니...
 public class ContactRestController {
 	@Autowired
 	private ContactService contactService;

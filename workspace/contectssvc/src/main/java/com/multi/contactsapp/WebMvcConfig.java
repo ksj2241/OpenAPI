@@ -11,12 +11,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+	   registry.addMapping("/contacts/**")
+	      .allowedOrigins("http://client:8000","http://jcornor.com:8000")
+	      .allowedMethods("GET","POST","PUT","DELETE","HEAD", "OPTIONS")
+	      .allowCredentials(true)
+	      .maxAge(3600);
+	}
+	
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
 		configurer.defaultContentType(MediaType.APPLICATION_JSON).favorParameter(true).parameterName("output")

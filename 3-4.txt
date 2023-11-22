@@ -8,9 +8,20 @@
 		
 		Preflight Request는 사전에 먼저 서비스 호출하여 동작 불가 여부를 먼저 리턴 받은 후,
 		본 동작 Requeust를 처리하는 호출을 실행.
+		
+		전역 처리 시, 아래 로직 이해가 안감
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+			   registry.addMapping("/contacts/**")
+				  .allowedOrigins("http://client:8000","http://jcornor.com:8000")
+				  .allowedMethods("GET","POST","PUT","DELETE","HEAD", "OPTIONS")
+				  .allowCredentials(true)
+				  .maxAge(3600);
+			}
 	
 2. 추가 공부 할 내용
 	Simple Request vs Preflight Request ??
+	access token이 무엇?
 	
 3. 참고 URL
 	https://contactsvc2.bmaster.kro.kr/contacts?callback=test&pageno=1
