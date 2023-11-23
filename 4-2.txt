@@ -1,10 +1,45 @@
 1. 요약정리
+	OAuth 1.0a 사전지식
+		용어 (괄호는 해당 교육 안에 사용될 약어) 교재 303P
+			3-Legsed OAuth
+				Service Provider : API를 제공하는 서비스, 제한된 리소스가 위치한 웹사이트나 웹서비스
+				User : 제한된 리소스의 소유자. 다른 사이트에서 접근하기를 원하는 사용자
+				Consumer, Client : 사용자 소유의 제한된 리소스에 접근하려는 어플리케이션
+			
+			Protected Resources
+			
+			Consumer Key(CK) : User Key 
+			Consumer Secret(CS) : User Secret
+			
+			Token
+				Request Token(RT) : Client Key
+				Request Token Secret(RTS) : Client Secret
+				
+				verifire : Service 에 등록 된 User Key를 가져올 또 다른 인증(?)
+				
+				Access Token(AT) : Service 에 등록 된 User Key
+				Access Token Secret(ATS) : Service 에 등록 된 User Secret
+
 	OAuthclient 테스트 시,
 	OAuth10Request 로직 중 OAuthMsgConstants 를 OAuthConstants로 변경
+	
+	로그인 인증을 통해,
+	어느 브라우저에서 로그인 상태인지 아닌지 확인하는 방법은
+		트위터에서는
+		로그인 여부에 따라, 로그인된 상태, 안된상태 를 각각 알고리즘을 타게 했다.
+		
+		일반적으로는
+		로그인 여부에 따라, 로그인 된 상태면 그 다음 알고리즘을 타게하고,
+		안된 상태면 로그인 페이지로 이동하여 다시 로그인 상태를 체크하는 알고리즘을 통하게 한다.
+		
+	Spring Boot scheduled
+	를 사용하여 clone job을 실행하여 실시간으로 로직 처리가 가능하다.
+	이거 알아놓아야 한다.
 		
 2. 추가 공부 할 내용
 	exfire
 	verifire의 상세
+	Spring Boot scheduled?
 	
 3. 참고 URL
 	

@@ -3,6 +3,7 @@ package org.thinker.oauth.generator;
 import java.util.UUID;
 
 import org.springframework.util.DigestUtils;
+import org.thinker.oauth.util.OAuthException;
 
 import com.multi.oauth10server.model.AccessTokenVO;
 import com.multi.oauth10server.model.ConsumerVO;
@@ -19,7 +20,7 @@ public class TokenGenerator {
 
 	public static void generateRequestToken(RequestTokenVO requestTokenVO) throws Exception {
 		if (requestTokenVO.getConsumerKey() == null) {
-			throw new Exception("because ConsumerKey is null, request token can't be created!!");
+			throw new OAuthException("because ConsumerKey is null, request token can't be created!!");
 		}
 		
 		String requestToken = UUID.randomUUID().toString();
