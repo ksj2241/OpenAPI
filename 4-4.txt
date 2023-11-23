@@ -1,0 +1,31 @@
+1. 요약정리
+	JWT
+		기존 Access Token의 문제점
+			사용자에 대한 모든 정보는 서버에 저장하고 있는 구조
+			토큰이 아주 많이 생성되어 데이터베이스에 저장되는 경우 성능 문제 유발
+			기존 Access Token 처리 flow 참조(p384)
+			자원이 한정되어 있을 때, 부하가 많이 걸린다.
+			
+			이때, JWT를 사용하는 근본적인 목적은 Resource 서버와 인가서버를 분리시키기 위해서다.
+		
+		Claim 기반이다.(Claim : 사용자 또는 어플리케이션에 대한 속성 정보. 이것을 하나의 토큰으로 쓰겠다.)
+		하지만 위, 변조 가능성이 존재하기에 변조 여부를 확인 하기 위한 수단이 필요하다.(p385)
+			1. HS256 : HMAC with SHA-256(p386)
+				리소스 서버는 인가 서버 또는 DB를 접근하지 않아도, 클라이언트 정보를 획득할 수 있다.
+				동일 조직 안에 인가서버 리소스서버 둘다 만들어주는 ???가 있어야한다...
+				
+			2. RS256 : RSA Sigature with SHA-256(p385의 이 문구가 사이즈가 커져야한다... 이거 오타.) (p387)
+				JWT를 이용한 Access Token
+				certificate 를 통해서 공개키 인증서를 만들어서 서명 검증한다.. 이 인증서가 JWK 라고 부른다.
+			
+			1, 2가지 모두 DB 접근하여 Key 체크 하는 로직을 validation 체크 하는 과정이 줄어든다.
+			
+			그래서 고민없이 애초에 RS256 방식으로 하면되지 않나...?? 맞다 RS256 방식을 사용하자
+		
+2. 추가 공부 할 내용
+	JWT? JWK?
+	
+3. 참고 URL
+	https://jwt.io/
+		-> jwt 토큰 해제 사이트 (ex. eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vyc19pZCI6ImdkaG9uZzJAdGVzdC5jb20iLCJyb2xlIjoidXNlcnMiLCJpYXQiOjE1NzgxMjQxMTEsImV4cCI6MTU3ODcyODkxMX0.YJBMCjkpwReN2DPMFYhvba1CWtGUUF8Kw6p0h2xvmuQ)
+		-> img 파일 4-6

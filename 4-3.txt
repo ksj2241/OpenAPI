@@ -1,0 +1,68 @@
+1. 요약정리
+	OAuth 1.0a 의 문제점
+		WebApp 클라이언트에서는 사용할 수 없다.
+		개발과 테스트의 어려움이 있다 : Signature!! (보안성은 높지만...)
+		인증서버와 리소스 서버의 분리가 힘들다.
+
+	OAuth 2.0
+		다양한 인증 방식 제공(4가지)
+		HTTPS 사용의 의무화
+		Signature를 사용하지 않음(Secret을 평문으로 전송 > HTTPS 사용 필수) -> 교재 363 페이지 오타. HTTP를 HTTPS로 변경
+		인증 & 인가 단계의 간소화(앱 승인 > Access Token 발행)
+		
+	말이 OAuth 1.0, 2.0 이지, 이 둘이 전혀 다르고 호환이 안된다.
+	
+	OAuth 1.0a vs 2.0
+		용어차이
+			client_id, client_secret
+				1.0a : Consumer Key, Consumer Secret
+				클라이언트 앱의 고유 ID와 Secret
+			
+			Authorization Server, Resource Server
+				1.0a : Service Provider
+				2.0에서는 인가서버와 자원서버로 분리될 수 있다.
+			
+			Code : authorization_code
+				1.0a : verifier
+				사용자가 클ㄹ라이언트를 승인 했음을 증빙하는 정보
+			
+			redirect_uri
+				1.0a : Callback Uri
+				승인 증빙정보를 가지고 이동할 클라이언트 앱의 엔드포인트
+				
+		HTTPS 사용 의무
+			Secret을 평문으로 전송해야함, 따라서 안전한 전송을 위해 https 사용이 의무
+			
+		Access token secret이 없다...
+			오로지 access token만 사용 > 이것이 치명적인 단점
+			access token의 유출 위험이 있다 > expires 개념 도입(유효시간)
+			access token이 expire 되면 refresh token을 이용해 재발급한다.
+			
+		작동방식 (Flow 상 점선은 필수 X)
+			1. Authorization Code Grant Flow(p368)
+				POST Parameter로 전송하는건 괜찮다. 그러나 GET 방식인 Query String Parameter로 전송하지 않는다.(교재 370의 "절대로 POST Parameter"는 밑줄이 아니라 스트라이크 라인이다.)
+				Refresh Token을 이용한 Accfess Token 재발급
+			2. Implicit Grant Flow(p374)
+				이제 쓰지 마라고 함... 위험부담이 있음.
+				사용자가 바로 요청하는 순간 Access Token 이 발급 됨.
+			3. Client Credentials Grant Flow (p377)
+				사용자가 없이 클라이언트의 자격만으로 Access Token을 응답.
+				관리자용 Desktop Application 에서 사용함.
+				일반적으로 사용하지 않는다.
+				(사내망에서 그 중에 관리자용 시스템이 있을 경우에 사용)
+			4. Resource Owner Password Credential Grant Flow(p379)
+				기업 내부 시스템에서는 가장 사용할 만한 기법
+				그 경우가 아닌 상황이라면 사용하지 않아야함.
+				(사내망에서 자체적으로 개발하여 사용하는 API 서비스라면 이 기법을 사용하는게 좋음)
+			
+	OAuth 2.1(p381)
+		공식적으로 확정 된 것이 아님. 표준이 정해지는 단계까지 진행 중(Working Draft).
+		OAuth 2.0 에서 몇몇 기능은 사용되지 않고 추가적인 보안 모범 사례를 제공한다.
+		https://oauth.net/2.1/
+		
+		
+2. 추가 공부 할 내용
+	CSRF(Cross Site Regest Forgesy) 공격
+	
+3. 참고 URL
+	https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-09
