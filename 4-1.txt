@@ -1,0 +1,44 @@
+1. 요약정리
+	Twitter로 테스트 하는 이유는
+	유일하게 OAuth 1.0 을 사용하여 인증하기 때문
+
+	Twitter 테스트 키
+		APIKEY : pXflOFrSxafUo0DPsRMWnURPR
+		SECRET : g946v0YFQq7nsT62fkysNHPNp26NhJ6ohfOQpF6oLZMKHdYSvG
+	
+	자세한 내용은 P.305 참고	
+		CK, CS 로 Client를 통하여 Service에 접근해 인증하면 RT, RTS가 발급받아 클라이언트가 확인이 되고
+		User가 Client를 승인하면(Client가 User의 개인 데이터를 사용해도 된다는 승인 = oauth_verifier)
+		Client단은 빠지고 User가 Service에 접근해 User의 인증, RT, RTS 이 3개를 활용하여
+		Service 단은 AT, ATS 를 Return 해준다.
+		1 request_token
+		2 authorize
+		3 accessToken
+		4 Resource
+		단계
+	
+
+	OAuth 1.0a 사전지식
+		용어 (괄호는 해당 교육 안에 사용될 약어) 교재 303P
+			3-Legsed OAuth
+				Service Provider : API를 제공하는 서비스, 제한된 리소스가 위치한 웹사이트나 웹서비스
+				User : 제한된 리소스의 소유자. 다른 사이트에서 접근하기를 원하는 사용자
+				Consumer, Client : 사용자 소유의 제한된 리소스에 접근하려는 어플리케이션
+			
+			Protected Resources
+			
+			Consumer Key(CK)
+			Consumer Secret(CS)
+			
+			Token
+				Request Token(RT)
+				Request Token Secret(RTS)
+				
+				Access Token(AT)
+				Access Token Secret(ATS)
+		
+2. 추가 공부 할 내용
+	exfire
+	
+3. 참고 URL
+	

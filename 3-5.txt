@@ -13,6 +13,7 @@
 		
 2. 추가 공부 할 내용
 	Redis 무엇?
+	Redis나 MongoDB로 count하여 update 기법?
 	Controller 내, preHandle 메소드 등 종류와 사용법?
 	
 3. 참고 URL
