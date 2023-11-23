@@ -1,5 +1,6 @@
 1. 요약정리
-	
+	OAuthclient 테스트 시,
+	OAuth10Request 로직 중 OAuthMsgConstants 를 OAuthConstants로 변경
 		
 2. 추가 공부 할 내용
 	exfire

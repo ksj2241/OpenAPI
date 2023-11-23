@@ -22,16 +22,12 @@
 
 	Twitter로 테스트 하는 이유는
 	유일하게 OAuth 1.0 을 사용하여 인증하기 때문
-
-	Twitter 테스트 키
-		APIKEY : pXflOFrSxafUo0DPsRMWnURPR
-		SECRET : g946v0YFQq7nsT62fkysNHPNp26NhJ6ohfOQpF6oLZMKHdYSvG
 	
 	자세한 내용은 P.305 참고	
 		CK, CS 로 Client를 통하여 Service에 접근해 인증하면 RT, RTS가 발급받아 클라이언트가 확인이 되고
 		User가 Client를 승인하면(Client가 User의 개인 데이터를 사용해도 된다는 승인 = oauth_verifier)
 		Client단은 빠지고 User가 Service에 접근해 User의 인증, RT, RTS 이 3개를 활용하여
-		Service 단은 AT, ATS 를 Return 해준다.
+		Service 단은 AT, ATS 를 Return 해준다. 결국, RT, RTS는 AT, ATS 를 가져오기 위한 Token 이다.
 		1 request_token
 		2 authorize
 		3 accessToken
