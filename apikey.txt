@@ -8,3 +8,7 @@
 	Consumer Key : 69228e2c-51bb-45ac-ba35-b7695068026f
 	Consumer Secret : 1787a416a9a3ba4e8b000bcf3cf3fb7c
 	Callback Url : http://jcornor.com:8080/callback
+	
+3. bitly
+	client ID : e523bbc65d9cc4b4db4a606b4b1a7ac88b54040a
+	client secret : 35f866c57c340c4677904e73e98c56f2e3476393
