@@ -1,4 +1,25 @@
 1. 요약정리
+	OAuth 1.0a 사전지식
+		용어 (괄호는 해당 교육 안에 사용될 약어) 교재 303P
+			3-Legsed OAuth
+				Service Provider : API를 제공하는 서비스, 제한된 리소스가 위치한 웹사이트나 웹서비스
+				User : 제한된 리소스의 소유자. 다른 사이트에서 접근하기를 원하는 사용자
+				Consumer, Client : 사용자 소유의 제한된 리소스에 접근하려는 어플리케이션
+			
+			Protected Resources
+			
+			Consumer Key(CK) : User Key 
+			Consumer Secret(CS) : User Secret
+			
+			Token
+				Request Token(RT) : Client Key
+				Request Token Secret(RTS) : Client Secret
+				
+				verifire : Service 에 등록 된 User Key를 가져올 또 다른 인증(?)
+				
+				Access Token(AT) : Service 에 등록 된 User Key
+				Access Token Secret(ATS) : Service 에 등록 된 User Secret
+
 	Twitter로 테스트 하는 이유는
 	유일하게 OAuth 1.0 을 사용하여 인증하기 때문
 
@@ -16,29 +37,35 @@
 		3 accessToken
 		4 Resource
 		단계
+		
+	verifire를 받아올 경우,
+	웹브라우저의 경우엔 callback controller url를 호출하나,
+	모바일에선 oob를 활용해서 적용한다.
+		
+	테스트 결과(img 4-3, 4-4)
+		request Token
+			oauth_token=msEGIAAAAAABL8gEAAABi_m_U1U
+			&oauth_token_secret=oVBWBA9w7lTpOYxdLJ3ImSJiMuDs7ZSh
+			&oauth_callback_confirmed=true
+
+		authorize
+			&oauth_verifier=pnX0idSNIkwRbVIqYr2NwRj1chVZOQS5
+
+		accessToken
+			oauth_token=1727223115158302720-B3BI3ZMtfy3FuEHGanh53N4WSjsmZ8
+			&oauth_token_secret=Kg8Qz5fSVFARTIRe3r8a9DoZNoRmxDt8tObzhgm5Sw8QG
+			&user_id=1727223115158302720
+			&screen_name=tjswls56
+			
+		Resource
+			데이터 등등..
 	
 
-	OAuth 1.0a 사전지식
-		용어 (괄호는 해당 교육 안에 사용될 약어) 교재 303P
-			3-Legsed OAuth
-				Service Provider : API를 제공하는 서비스, 제한된 리소스가 위치한 웹사이트나 웹서비스
-				User : 제한된 리소스의 소유자. 다른 사이트에서 접근하기를 원하는 사용자
-				Consumer, Client : 사용자 소유의 제한된 리소스에 접근하려는 어플리케이션
-			
-			Protected Resources
-			
-			Consumer Key(CK)
-			Consumer Secret(CS)
-			
-			Token
-				Request Token(RT)
-				Request Token Secret(RTS)
-				
-				Access Token(AT)
-				Access Token Secret(ATS)
+	
 		
 2. 추가 공부 할 내용
 	exfire
+	verifire의 상세
 	
 3. 참고 URL
 	
