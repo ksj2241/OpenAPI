@@ -14,17 +14,27 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class OAuthInterceptor  implements HandlerInterceptor {
+public class OAuthInterceptor implements HandlerInterceptor {
 	@Autowired
 	UsersService usersService;
 	@Autowired
 	ConsumerService consumerService;
-	
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		//이곳에 코드를 작성합니다. 
-        
-        return true;
+		// 이곳에 코드를 작성합니다.
+		OAuthTokenParam param = new OAuthTokenParam(request);
+		long userNo = param.getUserNo();
+		String consumerKey = param.getConsumerKey();
+		
+		UsersVO usersVO = usersService.selectUserByUserNo(userNo);
+		ConsumerVO consumerVO = consumerService.selectByConsumerKey(consumerKey);
+		
+		param.validateRequestToken(consumerVO, usersVO);
+		request.setAttribute("usersVO", usersVO);
+		request.setAttribute("consumerVO", consumerVO);
+		
+		return true;
 	}
 }

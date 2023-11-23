@@ -15,5 +15,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		//이곳에 코드를 작성합니다.
+		registry.addInterceptor(interceptor).addPathPatterns("/api/**");
 	}
 }

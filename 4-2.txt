@@ -33,13 +33,15 @@
 		안된 상태면 로그인 페이지로 이동하여 다시 로그인 상태를 체크하는 알고리즘을 통하게 한다.
 		
 	Spring Boot scheduled
-	를 사용하여 clone job을 실행하여 실시간으로 로직 처리가 가능하다.
+	를 사용하여 clone job을 실행하여 실시간으로 로직 처리가 가능하다.0
 	이거 알아놓아야 한다.
 		
 2. 추가 공부 할 내용
 	exfire
 	verifire의 상세
 	Spring Boot scheduled?
+	Servlet Filter, Spring framework Interceptor 로 중앙집중처리 기능?
+		> 컨트롤러마다 다 로직처리해줘야하는 것을 이것으로 해결가능한데 이거 공부해야 할듯 무조건
 	
 3. 참고 URL
 	
