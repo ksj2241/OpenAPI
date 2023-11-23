@@ -17,6 +17,9 @@
 			2. RS256 : RSA Sigature with SHA-256(p385의 이 문구가 사이즈가 커져야한다... 이거 오타.) (p387)
 				JWT를 이용한 Access Token
 				certificate 를 통해서 공개키 인증서를 만들어서 서명 검증한다.. 이 인증서가 JWK 라고 부른다.
+				
+				p389,p390
+				JWK = BASE64Encoding(header) + "." + BASE64Encoding(payload) + "." + BASE64Encoding(signature)
 			
 			1, 2가지 모두 DB 접근하여 Key 체크 하는 로직을 validation 체크 하는 과정이 줄어든다.
 			
@@ -24,6 +27,7 @@
 		
 2. 추가 공부 할 내용
 	JWT? JWK?
+	payload 란?
 	
 3. 참고 URL
 	https://jwt.io/
