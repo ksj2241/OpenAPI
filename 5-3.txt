@@ -1,6 +1,11 @@
 1. 요약정리
 	Spring Doc Openapi 사용하면
 		rest API > Json Doc > swagger UI > html UI
+		
+		적용 후 url, pom.xml 적용만 하면 아래 url 자동으로 적용이 됨.
+		http://localhost:8080/swagger-ui/index.html
+		http://localhost:8080/v3/api-docs/swagger-config
+		
 	
 2. 추가 공부 할 내용
 	Spring Doc Openapi
