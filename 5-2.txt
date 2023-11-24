@@ -22,6 +22,13 @@
 	아래는 실습
 		인가서버 : http://tfactory.com
 		
+	만약,
+	React 일 경우 아키텍처,
+		browser > react client web server > authrization server
+			  JWT인증                    OAuth인증
+						RT,AT 저장 후, > resource werver
+						
+		
 		
 2. 추가 공부 할 내용
 	java에서 hex code 생성법?
