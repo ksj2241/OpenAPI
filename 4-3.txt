@@ -39,9 +39,9 @@
 			access token이 expire 되면 refresh token을 이용해 재발급한다.
 			
 		작동방식 (Flow 상 점선은 필수 X)
-			1. Authorization Code Grant Flow(p368)
+			1. Authorization Code Grant(Access Token을 말함) Flow(p368) : 서명 사용하지 않는다
 				POST Parameter로 전송하는건 괜찮다. 그러나 GET 방식인 Query String Parameter로 전송하지 않는다.(교재 370의 "절대로 POST Parameter"는 밑줄이 아니라 스트라이크 라인이다.)
-				Refresh Token을 이용한 Accfess Token 재발급
+				Refresh Token을 이용한 Access Token 재발급
 			2. Implicit Grant Flow(p374)
 				이제 쓰지 마라고 함... 위험부담이 있음.
 				사용자가 바로 요청하는 순간 Access Token 이 발급 됨.
@@ -53,6 +53,7 @@
 			4. Resource Owner Password Credential Grant Flow(p379)
 				기업 내부 시스템에서는 가장 사용할 만한 기법
 				그 경우가 아닌 상황이라면 사용하지 않아야함.
+				RS방식 사용해야함
 				(사내망에서 자체적으로 개발하여 사용하는 API 서비스라면 이 기법을 사용하는게 좋음)
 			
 	OAuth 2.1(p381)
@@ -66,3 +67,4 @@
 	
 3. 참고 URL
 	https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-09
+	https://datatracker.ietf.org/doc/html/rfc8252
