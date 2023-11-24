@@ -10,6 +10,7 @@
 2. 추가 공부 할 내용
 	Spring Doc Openapi
 	문서화 주요 Annotation 종류 및 기능?
+	SDK?
 	
 3. 참고 URL
 	
