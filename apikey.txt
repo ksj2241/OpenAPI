@@ -15,4 +15,5 @@
 	
 4. 사설인증서
 	keytool -genkeypair -alias oauth2-sample -keyalg RSA -keystore oauth2-sample.pfx -storetype PKCS12
-	비번 123456
+	user : gonosil
+	비번 : 123456

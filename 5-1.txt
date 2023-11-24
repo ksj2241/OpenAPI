@@ -22,5 +22,5 @@
 	JWT 사용 시, black List ? white List 차이?
 	
 3. 참고 URL
-	
+	https://www.oauth.com/oauth2-servers/token-introspection-endpoint/
 	

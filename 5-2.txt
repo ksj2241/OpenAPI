@@ -19,11 +19,18 @@
 	사설인증서 생성.
 		keytool -genkeypair -alias oauth2-sample -keyalg RSA -keystore oauth2-sample.pfx -storetype PKCS12
 		
+	아래는 실습
+		인가서버 : http://tfactory.com
+		
 		
 2. 추가 공부 할 내용
 	java에서 hex code 생성법?
 	JWT 사용 시, black List ? white List 차이?
+	람다 기법 ?
+	
+	Spring Security ? 
 	
 3. 참고 URL
-	
+	https://github.com/spring-projects/spring-authorization-server
+		> OAuth2 서버 오픈소스
 	
