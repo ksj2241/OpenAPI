@@ -12,3 +12,7 @@
 3. bitly
 	client ID : e523bbc65d9cc4b4db4a606b4b1a7ac88b54040a
 	client secret : 35f866c57c340c4677904e73e98c56f2e3476393
+	
+4. 사설인증서
+	keytool -genkeypair -alias oauth2-sample -keyalg RSA -keystore oauth2-sample.pfx -storetype PKCS12
+	비번 123456

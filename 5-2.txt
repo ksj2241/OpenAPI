@@ -1,0 +1,29 @@
+1. 요약정리
+	bitlyclient 실습
+		5-1, 5-2 이미지로 소스 변경
+		
+	인증서버를 구현하는 방법(p409) - oauth20server 로 만들어서 실습! 이미지는 개발환경_4_1, 개발환경_4_2
+		Spring Boot 2 이하 버전과 3 이상버전이랑 구현 방법이 아예 다르다.
+		
+		환경
+		Spring Boot 3.x + Spring Security OAuth2 Authorization Server, Resource Server(1.x.x)
+		
+		다양한 Token
+			1. InMemory
+			2. JDBC
+			3. JWT
+			예제로는 JWT 만을 작성할 것.
+			
+		라이브러리의 사용보다 인증 흐름을 이해하는 것이 중요함
+		
+	사설인증서 생성.
+		keytool -genkeypair -alias oauth2-sample -keyalg RSA -keystore oauth2-sample.pfx -storetype PKCS12
+		
+		
+2. 추가 공부 할 내용
+	java에서 hex code 생성법?
+	JWT 사용 시, black List ? white List 차이?
+	
+3. 참고 URL
+	
+	
