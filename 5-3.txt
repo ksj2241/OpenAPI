@@ -1,0 +1,11 @@
+1. 요약정리
+	Spring Doc Openapi 사용하면
+		rest API > Json Doc > swagger UI > html UI
+	
+2. 추가 공부 할 내용
+	Spring Doc Openapi
+	문서화 주요 Annotation 종류 및 기능?
+	
+3. 참고 URL
+	
+	
